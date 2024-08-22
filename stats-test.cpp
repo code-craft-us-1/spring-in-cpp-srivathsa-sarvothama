@@ -12,7 +12,7 @@ TEST(Statistics, ReportsAverageMinMax) {
 
 TEST(Statistics, AverageNaNForEmpty) {
     auto computedStats = Statistics::ComputeStatistics({});
-    EXPECT_EQ(computedStats.average, NAN);
-    EXPECT_EQ(computedStats.max, NAN);
-    EXPECT_EQ(computedStats.min, NAN);
+    EXPECT_EQ(isnan(computedStats.average), 1);
+    EXPECT_EQ(isnan(computedStats.max), 1);
+    EXPECT_EQ(isnan(computedStats.min), 1);
 }
